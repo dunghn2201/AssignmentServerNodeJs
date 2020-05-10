@@ -1,0 +1,141 @@
+<!-- ============================================================== -->
+<!-- Topbar header - style you can find in pages.scss -->
+<!-- ============================================================== -->
+{{> header}}
+<!-- ============================================================== -->
+<!-- End Topbar header -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- Left Sidebar - style you can find in sidebar.scss  -->
+<!-- ============================================================== -->
+{{> slidebar}}
+<div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-5 align-self-center">
+                <h4 class="page-title">Edit</h4>
+            </div>
+            <div class="col-7 align-self-center">
+                <div class="d-flex align-items-center justify-content-end">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="#">Home</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                Edit
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+        <div class="table-wrapper">
+            <div class="row">
+                <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                    <div class="card">
+                        <div class="card-body">
+                            <form action="/Edit" method="POST" enctype="multipart/form-data" autocomplete="off">
+                                <div class="modal-header">
+                                    <h4 class="modal-title card-title">Edit Sneaker</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                        &times;
+                                    </button>
+                                </div>
+                                <input type="hidden" name="_id" value="{{Sneaker._id}}" />
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Name</label>
+                                    <input type="text" class="form-control" name="nameSneaker"
+                                        value="{{Sneaker.nameSneaker}}">
+                                    <span class=" bmd-help">We'll never share your email with anyone else.</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleSelect1" class="bmd-label-floating">Size</label>
+                                    <select class="form-control" name="size">
+                                        <option selected value="{{Sneaker.size}}">{{Sneaker.size}}</option>
+                                        <option value="34">34</option>
+                                        <option value="35">35</option>
+                                        <option value="36">36</option>
+                                        <option value="37">37</option>
+                                        <option value="38">38</option>
+                                        <option value="39">39</option>
+                                        <option value="40">40</option>
+                                        <option value="41">41</option>
+                                        <option value="42">42</option>
+                                        <option>43</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="mr-sm-2 bmd-label-floating"
+                                        for="inlineFormCustomSelect">Material</label>
+                                    <select class="custom-select mr-sm-2" name="material">
+                                        <option selected value="{{Sneaker.material}}">{{Sneaker.material}}</option>
+                                        <option value="Canvas">Canvas</option>
+                                        <option value="Synthetic">Synthetic</option>
+                                        <option value="Suede/Textile">Suede/Textile</option>
+                                        <option value="Leather/Textile">Leather/Textile</option>
+                                        <option value="Rubber">Rubber</option>
+                                        <option value="Foam">Foam</option>
+                                        <option value="Block heel">Block heel</option>
+                                        <option value="Ballet flats">Ballet flats</option>
+
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="mr-sm-2 bmd-label-floating">Color</label>
+                                    <select class="custom-select mr-sm-2" name="color">
+                                        <option selected value="{{Sneaker.color}}">{{Sneaker.color}}</option>
+                                        <option value="Faded Spruce/Black/White">Faded Spruce/Black/White</option>
+                                        <option value="Rapid Teal/White">Rapid Teal/White</option>
+                                        <option value="Wolf Grey/Rapid Teal/White">Wolf Grey/Rapid Teal/White</option>
+                                        <option value="Khaki/Black/White">Khaki/Black/White</option>
+                                        <option value="Candied Ginger/White/Black">Candied Ginger/White/Black</option>
+                                        <option value="Obsidian/Amarillo/White">Obsidian/Amarillo/White</option>
+                                        <option value="Photon/Dust/Egret/Black">Photon/Dust/Egret/Black</option>
+                                        <option value="University/Red/Black">University/Red/Black</option>
+                                        <option value="Pure Platinum/Black">Pure Platinum/Black</option>
+                                    </select>
+                                </div>
+                                <div class=" form-group">
+                                    <label class="bmd-label-floating">Price</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Price" name="price"
+                                            value="{{Sneaker.price}}">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">VND</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Image</label>
+                                    <input type="file" name="image" class="form-control" width=" 100%"
+                                        value="{{Sneaker.image}}" required />
+                                    <div><img src="http://localhost:3000/{{Sneaker.image}}" alt="" width="50px"
+                                            height="50px"></div>
+                                </div>
+                                <button class="btn btn-default">Cancel</button>
+                                <button type="submit" class="btn btn-primary btn-raised">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Container fluid  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    {{> footer}}
+</div>
